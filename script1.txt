@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mkdir -p /script1
+
+cd /script1
+
+touch bspl{0001..0100}.c
+
+for x in bspl{0001..0100}.c
+do
+echo "nginx-01.com" >> bspl{0001..0100}.c
+done
+
+
+for x in `find /script1/ -name bspl{0001..0100}.c -type x`; do sed "s/nginx-01.com  /nginx-02.com" >> $x; done
